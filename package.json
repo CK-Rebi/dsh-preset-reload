@@ -1,6 +1,6 @@
 {
   "name": "dsh-preset-reload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hot-reload a DeepSeek Harness agent preset: rebuild its revision and rebind running sessions, without restarting dsh.",
   "type": "module",
   "license": "MIT",
@@ -38,7 +38,8 @@
     "node": ">=20"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-app-boot": ">=0.1.7-rc.2"
+    "@deepseek-ai/dsh-app-boot": ">=0.1.7-rc.2 <0.2.0-0 || >=0.2.0-rc.1 <0.2.1-0 || >=0.2.1-alpha.1 <0.3.0-0",
+    "@deepseek-ai/schemastery": "^3.18.1"
   },
   "dsh": {
     "bundle": {
