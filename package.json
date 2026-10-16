@@ -1,0 +1,48 @@
+{
+  "name": "dsh-preset-reload",
+  "version": "1.0.0",
+  "description": "Hot-reload a DeepSeek Harness agent preset: rebuild its revision and rebind running sessions, without restarting dsh.",
+  "type": "module",
+  "license": "MIT",
+  "author": "CK-Rebi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CK-Rebi/dsh-preset-reload.git"
+  },
+  "homepage": "https://github.com/CK-Rebi/dsh-preset-reload#readme",
+  "bugs": {
+    "url": "https://github.com/CK-Rebi/dsh-preset-reload/issues"
+  },
+  "exports": {
+    ".": "./index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "docs"
+  ],
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "agent-preset",
+    "hot-reload"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-app-boot": ">=0.1.7-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

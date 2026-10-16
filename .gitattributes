@@ -1,0 +1,3 @@
+# Normalize line endings to LF in the repository and in every working tree, so
+# checkouts are identical on Windows and POSIX.
+* text=auto eol=lf

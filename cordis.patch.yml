@@ -1,0 +1,31 @@
+# Bundle patch for dsh-preset-reload.
+#
+# Installing the bundle inserts this host-layer row into the profile. The row
+# must live in the host layer, never inside a preset: a preset-level row would
+# be replaced by the very remount this plugin performs.
+- insert:
+    - id: preset-reload
+      name: 'dsh-preset-reload'
+      config:
+        # Agent preset ids to reload. Add your own.
+        presets: []
+
+        # Files or directories to watch. Point these at whatever carries your
+        # preset definition — usually the generated cordis.patch.yml of your
+        # own bundle. Prefer the file over its directory: editing a plugin
+        # module without regenerating the patch does not change the definition,
+        # and a directory watch would then remount the preset for nothing.
+        roots: []
+
+        # Quiet window that merges consecutive file events.
+        debounceMs: 800
+
+        # false leaves only the preset_reload tool as a trigger.
+        auto: true
+
+        # Use the disable -> enable cycle to force a fresh preset revision.
+        # See docs/why-force.md for why a plain config change is not enough.
+        force: true
+
+        # Audit log path; an empty string writes no file.
+        logFile: ''
